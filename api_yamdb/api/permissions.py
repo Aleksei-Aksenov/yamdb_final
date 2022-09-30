@@ -8,6 +8,7 @@ class IsAdmin(permissions.BasePermission):
         user = request.user
         if user.is_authenticated and user.is_admin:
             return True
+        return False
 
 
 class IsAdminOrReadOnly(permissions.BasePermission):
