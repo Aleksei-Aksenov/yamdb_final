@@ -1,29 +1,27 @@
+from api import mixins
+from api.filters import TitleFilter
+from api.permissions import (IsAdmin, IsAdminModeratorAuthorOrReadOnly,
+                             IsAdminOrReadOnly)
+from api.serializers import (CategorySerializer, CommentSerializer,
+                             GenreSerializer, NewUserSerializer,
+                             ReviewSerializer, TitleReadSerializer,
+                             TitleWriteSerializer, TokenGenerationSerializer,
+                             UserSerializer)
 from django.conf import settings
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.core.mail import send_mail
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
+from django_filters import rest_framework as rest_filters
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, pagination, permissions, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from django_filters import rest_framework as rest_filters
-from rest_framework import (filters, pagination, viewsets, status,
-                            permissions)
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import AccessToken
-
-from api import mixins
 from reviews.models import Review
 from titles.models import Category, Genre, Title
 from users.models import CustomUser
-from api.filters import TitleFilter
-from api.permissions import (IsAdminModeratorAuthorOrReadOnly,
-                             IsAdminOrReadOnly, IsAdmin)
-from api.serializers import (CategorySerializer, CommentSerializer,
-                             GenreSerializer, ReviewSerializer,
-                             TitleReadSerializer, TitleWriteSerializer,
-                             NewUserSerializer, TokenGenerationSerializer,
-                             UserSerializer)
 
 
 class CategoryViewSet(mixins.CreateListDestroyViewSet):
