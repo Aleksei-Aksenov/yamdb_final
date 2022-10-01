@@ -1,5 +1,6 @@
 [![yamdb_workflow](https://github.com/Aleksei-Aksenov/yamdb_final/workflows/yamdb_workflow/badge.svg)](https://github.com/Aleksei-Aksenov/yamdb_final/actions/workflows/yamdb_workflow.yml)
-# api_yamdb
+# Групповой проект: [yamdb_final](http://http://51.250.90.71/)
+
 ![badge](https://user-images.githubusercontent.com/86766017/175809946-525c22c7-c999-4101-85e0-f284ee3ac198.svg)
 ## Групповой проект 
 __YAMDB__ собирает отзывы на произведения от пользователей. 
